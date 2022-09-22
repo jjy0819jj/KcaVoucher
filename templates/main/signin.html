@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Signin Template · Bootstrap v5.1</title>
+
+    <!-- Bootstrap core CSS -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-center">
+
+<main class="form-signin">
+  <form method="post" class="post-form" action="{% url 'main:signin' %}">
+    {% csrf_token %}
+    {% include "main/form_errors.html" %}
+    <img class="mb-4" src="{% static 'img/logo.png' %}" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">SIGN IN</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" name="username" id="username" placeholder="name@example.com">
+      <label for="username">이름</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+      <label for="password">패스워드</label>
+    </div>
+
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+    <button class="w-100 btn btn-lg btn-secondary" type="button" onClick="location.href = '{% url 'main:signup' %}'">계정 생성</button>
+    <p class="mt-5 mb-3 text-muted">&copy; ICT BUSINESS CENTER</p>
+  </form>
+</main>
+  </body>
+</html>

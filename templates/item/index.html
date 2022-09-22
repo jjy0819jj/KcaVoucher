@@ -1,0 +1,27 @@
+{% extends 'user/nav.html' %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">아이템명</th>
+      <th scope="col">구분</th>
+      <th scope="col">사업계획서</th>
+      <th scope="col">발표자료</th>
+      <th scope="col">스크립트</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for v in item_list %}
+        <tr>
+          <th scope="row">1</th>
+          <td>v.name</td>
+          <td>v.type</td>
+          <td>v.hwp_progress</td>
+          <td>v.pdf_progress</td>
+          <td>v.script_progress</td>
+        </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

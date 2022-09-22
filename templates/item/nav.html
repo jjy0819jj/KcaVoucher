@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block nav %}
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">사용자</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+        <a href="{% url 'user:index' %}" class="nav-link text-white">
+          <i class="bi bi-box me-1" style="font-size: 1rem;"></i>
+          사용자 목록
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'user:create' %}" class="nav-link text-white">
+          <i class="bi bi-box me-1" style="font-size: 1rem;"></i>
+          사용자 등록
+        </a>
+      </li>
+    </ul>
+    <hr>
+</div>
+{% endblock %}

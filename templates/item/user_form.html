@@ -1,0 +1,8 @@
+{% extends 'user/nav.html' %}
+{% block content %}
+<form method="post" class="post-form my-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">저장하기</button>
+</form>
+{% endblock %}
